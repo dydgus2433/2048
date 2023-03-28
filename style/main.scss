@@ -16,7 +16,7 @@ $tile-color: #eee4da;
 $tile-gold-color: #edc22e;
 $tile-gold-glow-color: lighten($tile-gold-color, 15%);
 
-$game-container-margin-top: 40px;
+$game-container-margin-top: 40px !global;
 $game-container-background: #bbada0;
 
 $transition-speed: 100ms;
@@ -170,7 +170,7 @@ hr {
 // Game field mixin used to render CSS at different width
 @mixin game-field {
   .game-container {
-    margin-top: $game-container-margin-top;
+    margin-top: $game-container-margin-top ;
     position: relative;
     padding: $grid-spacing;
 
@@ -475,11 +475,11 @@ hr {
 @include smaller($mobile-threshold) {
   // Redefine variables for smaller screens
   $field-width: 280px !global;
-  $grid-spacing: 10px;
-  $grid-row-cells: 4;
-  $tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells;
-  $tile-border-radius: 3px;
-  $game-container-margin-top: 17px;
+  $grid-spacing: 10px !global;
+  $grid-row-cells: 4  !global;
+  $tile-size: ($field-width - $grid-spacing * ($grid-row-cells + 1)) / $grid-row-cells  !global;
+  $tile-border-radius: 3px !global;
+  $game-container-margin-top: 17px !global;
 
   html, body {
     font-size: 15px;
